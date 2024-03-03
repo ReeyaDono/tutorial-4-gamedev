@@ -19,13 +19,13 @@ func get_input():
 		velocity.x -= speed
 
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	velocity.y += delta * GRAVITY
 	get_input()
 	velocity = move_and_slide(velocity, UP)
 
 
-func _process(_delta):
+func _process(delta):
 	if velocity.y != 0:
 		$Animator.play("Jump")
 	elif velocity.x != 0:
